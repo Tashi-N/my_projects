@@ -1,0 +1,59 @@
+<html>
+<head>
+    <title>BMI Calculator</title>
+    <style type="text/css">
+        body{
+            background-image:url("received_539181800319926.jpeg");
+        }
+   
+</style>
+</head>
+<body>
+    <form name="bmiForm">
+Weight: <input type="ratio" name="weight" size="10">
+<select type="multiple" id="weightunits">
+            <option value="kg" selected="selected">kilograms</option>
+            <option value="lb">gram</option>
+        </select><br>
+Height:  <input type="text" name="height" size="10"><select type="multiple" id="heightunits">
+            <option value="metres" selected="selected">centermetres</option>
+            <option value="inches">meter</option>
+        </select><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="button" value="Calculate BMI" onClick="bmiCalculator()"><br /><br>
+Your BMI: <input type="text" name="bmi" size="10"><br /><br>
+This Means: <input type="text" name="meaning" size="25"><br /><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="reset" value="Reset" />
+</form>
+
+<script>     
+function bmiCalculator() {
+var weight = document.bmiForm.weight.value
+var height = document.bmiForm.height.value
+if(weight > 0 && height > 0){ 
+var finalBmi = weight/(height/100*height/100)
+document.bmiForm.bmi.value = finalBmi
+if(finalBmi < 18.5){
+document.bmiForm.meaning.value = "That you are too thin."
+}
+if(finalBmi > 18.5 && finalBmi < 25){
+document.bmiForm.meaning.value = "That you are healthy."
+}
+if(finalBmi > 25){
+document.bmiForm.meaning.value = "That you have overweight."
+}
+}
+else{
+alert("Please Fill in everything correctly")
+}
+}
+</script>
+        <ul>
+            <li>Less than 18.5  Underweight</li>
+            <li>18.5 to 25  Normal</li>
+            <li>25-30 Overweight</li>
+            <li>More than 30 Obese</li>
+         </ul>
+         <h3>Take me back to <a href="index.html">Home</a></h3>
+</body>
+        
+</html>

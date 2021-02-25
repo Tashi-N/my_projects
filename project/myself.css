@@ -1,0 +1,12 @@
+@media screen and (max-width: 600px){
+	.col-md-6{
+		text-align: center;
+	}
+	
+	button{
+		float: none;
+		width: auto;
+		margin-left: 0;
+		margin-right:0;
+	}
+}
